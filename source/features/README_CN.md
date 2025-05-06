@@ -1,10 +1,37 @@
-[👉 English Version](./README.md)
+# 特性文档由代码自动生成，中文文档不再维护，请查看[英文文档](./README.md)
 
 # 连字和特性
 
 这是一个所有连字和特性的清单和解释
 
 查看同目录下的 `.fea` 文件 和 [OpenType Feature 语法规范](https://adobe-type-tools.github.io/afdko/OpenTypeFeatureFileSpecification.html) 获取更多信息。
+
+## 使用
+
+### VSCode
+
+在 VSCode settings json 文件中设置
+
+```jsonc
+{
+  // 设置字体
+  "editor.fontFamily": "Maple Mono NF CN, Menlo, Consolas, Maple UI, PingFang, 'Microsoft YaHei', monospace",
+  // 启用连字
+  "editor.fontLigatures": "'calt'",
+  // 或者开启 OpenType 特性
+  "editor.fontLigatures": "'calt', 'cv01', 'ss01', 'zero'",
+}
+```
+
+### IDEA / Pycharm / WebStorm / GoLand / CLion
+
+1. 打开设置
+2. 点击 "编辑器"
+3. 点击 "字体"
+4. 在字体下拉框中选择 Maple Mono NF CN
+5. 点击 "启用连字"
+
+不支持 OpenType 特性，你需要自行构建以强制开启特性。
 
 ## 连字
 
@@ -174,7 +201,7 @@ fixme))
 - ss02: 分离的比较连字 (`<=`, `>=`)
 - ss03: 启用任意的纯文本标签 (在标签中支持使用任意大小写字母)
 - ss04: 分离的多下划线连字 (`__`, `#__`)
-- ss05: 在转义字符中显示细的转义符号 (`\w`, `\n`, `\r` ...)
+- ss05: 在转义字符中显示正常粗细的转义符号 (`\\`, `\"`, `\,` ...)
 - ss06: 去除斜体的连笔 (`al`, `ul`, `il` ...)
-- ss07: 放宽启用多个大于符号连字的条件 (`>>` or `>>>`)
+- ss07: 放宽启用多个大于号连字的条件 (`>>` or `>>>`)
 - ss08: 启用双箭头和反向箭头连字 (`>>=`, `-<<`, `->>`, `>-` ...)
